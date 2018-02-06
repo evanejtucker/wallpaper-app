@@ -13,8 +13,7 @@ app.get('/wallpaper', (req, res, next)=> {
     let imagePath = path.join(__dirname, 'public/images/background.jpg');
     wallpaper.set(imagePath).then(() => {
         console.log(imagePath);
-        console.log('done');
-        res.send(imagePath);
+        res.redirect('/');
     });
 });
 
@@ -22,8 +21,7 @@ app.get('/wallpaper1', (req, res, next)=> {
     let imagePath = path.join(__dirname, 'public/images/background1.jpg');
     wallpaper.set(imagePath).then(() => {
         console.log(imagePath);
-        console.log('done');
-        res.send(imagePath);
+        res.redirect('/');
     });
 });
 
@@ -31,24 +29,22 @@ app.get('/wallpaper2', (req, res, next)=> {
     let imagePath = path.join(__dirname, 'public/images/background2.jpg');
     wallpaper.set(imagePath).then(() => {
         console.log(imagePath);
-        console.log('done');
-        res.send(imagePath);
+        res.redirect('/');
     });
 });
 
 app.get('/wallpaper3', (req, res, next)=> {
-    let imagePath = path.join(__dirname, 'background3.jpg');
+    let imagePath = path.join(__dirname, 'public/images/background3.jpg');
     wallpaper.set(imagePath).then(() => {
         console.log(imagePath);
-        console.log('done');
-        res.send(imagePath);
+        res.redirect('/');
     });
 });
 
 app.get('/wallpaperInfo', (req, res, next)=> {
     wallpaper.get().then((imageInfo) => {
         console.log(imageInfo);
-        res.send(imageInfo);
+        res.redirect('/');
     });
 });
 
