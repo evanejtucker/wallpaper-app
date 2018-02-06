@@ -41,6 +41,14 @@ app.get('/wallpaper3', (req, res, next)=> {
     });
 });
 
+app.get('/wallpaper4', (req, res, next)=> {
+    let imagePath = path.join(__dirname, 'public/images/background4.jpg');
+    wallpaper.set(imagePath).then(() => {
+        console.log(imagePath);
+        res.redirect('/');
+    });
+});
+
 app.get('/wallpaperInfo', (req, res, next)=> {
     wallpaper.get().then((imageInfo) => {
         console.log(imageInfo);
