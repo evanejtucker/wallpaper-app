@@ -57,6 +57,10 @@ app.get('/wallpaperInfo', (req, res, next)=> {
     });
 });
 
+app.get('/test', (req, res, next)=> {
+    res.send('test route is working');
+});
+
 app.listen(port, ()=> {
     console.log('connected on port ' + port);
 });
