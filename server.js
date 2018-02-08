@@ -2,11 +2,12 @@ const express = require('express');
 const app = express();
 const wallpaper = require('wallpaper');
 const path = require('path');
+const port = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 
-app.get('/', (req, res, next)=> {
-    res.sendFile('./index.html')
+app.get('/', (req, res, next) => {
+    res.sendFile('./index.html');
 });
 
 app.get('/wallpaper', (req, res, next)=> {
@@ -56,6 +57,6 @@ app.get('/wallpaperInfo', (req, res, next)=> {
     });
 });
 
-app.listen(3000, ()=> {
-    console.log('connected on port 3000');
+app.listen(port, ()=> {
+    console.log('connected on port ' + port);
 });
